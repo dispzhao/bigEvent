@@ -35,7 +35,7 @@ $(function () {
         layer.confirm('确定退出登录?', { icon: 3, title: '提示' }, function (index) {
             //清空local中的token
             localStorage.removeItem('token')
-            location.href = './login.html'
+            location.href = '/code/login.html'
             layer.close(index);
         });
     })

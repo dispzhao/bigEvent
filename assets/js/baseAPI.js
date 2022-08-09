@@ -9,9 +9,9 @@ $.ajaxPrefilter(function (options) {
         // 统一挂载complete回调函数
         options.complete = function (res) {
             // 不能没有登陆直接访问index页面
-            if (res.responseJSON.status === 1) {
+            if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
                 localStorage.removeItem('token')
-                location.href = './login.html'
+                location.href = '/code/login.html'
             }
         }
     }
